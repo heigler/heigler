@@ -1,0 +1,101 @@
+*{
+    list-style: none;
+    font-family: Verdana;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+body{
+    background: #20272E url('bg.jpg') no-repeat top center;
+}
+
+.container{
+    width: 980px;
+    text-align: center;
+    margin: 0 auto;
+}
+#navigator{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+    #navigator ul{
+        float: left;
+        width: 100%;
+        height: 149px;
+    }
+
+/* header */    
+#header{
+    width: 980px;
+    height: 151px;
+    float: left;
+}
+    #header p.left{
+        float: left;
+        background: url('logo.png') no-repeat top center;
+        width: 298px;
+        height: 63px;
+        text-indent: -9999px;
+        margin: 10px 0 0 179.5px;
+    }
+    #header div.right{
+        float: right;
+        height: 68px;
+        width: 315px;
+        margin: 5px 180px 0 0;
+    }
+        #header div.right p.flags{
+            width: 315px;
+            text-align: right;
+        }
+            #header div.right p.flags a{
+                display: inline-block;
+                width: 27px;
+                height: 26px;
+            }
+            #header div.right p.flags a.br{
+                background: url('flag_br.png') no-repeat top center;
+            }
+            #header div.right p.flags a.en{
+                background: url('flag_en.png') no-repeat top center;
+            }
+            #header div.right p.flags a.en.on{
+                background: url('flag_en_on.png') no-repeat top center;
+            }
+            #header div.right p.flags a.br.on{
+                background: url('flag_br_on.png') no-repeat top center;
+            }
+                #header div.right p.flags a.br:hover{
+                    background: url('flag_br_on.png') no-repeat top center;
+                }
+                #header div.right p.flags a.en:hover{
+                    background: url('flag_en_on.png') no-repeat top center;
+                }
+        #header div.right p.quote{
+            width: 315px;
+            font-size: 12px;
+            color: #6C86AC;
+            background: aqua;
+            height: 40px;
+        }
+
+            
+    #header p.navmenu{
+        clear: both;
+        float: left;
+        width: 621px;
+        height: 71px;
+        background: green;
+        margin: 6px 0 0 179.5px;
+    }
+
+
+#content{
+    width: 980px;
+    float: left;
+    background: yellow;
+    min-height: 300px;
+}
