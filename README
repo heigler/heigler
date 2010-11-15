@@ -1,0 +1,4 @@
+- Create a virtualenv
+- run: pip install requirements.txt
+- Create a database
+- Configure heigler/settings.py with your db configuration
