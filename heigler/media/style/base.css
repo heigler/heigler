@@ -78,7 +78,6 @@ body{
             width: 315px;
             font-size: 12px;
             color: #6C86AC;
-            background: aqua;
             height: 40px;
         }
 
@@ -87,15 +86,39 @@ body{
         clear: both;
         float: left;
         width: 621px;
-        height: 71px;
-        background: green;
+        height: 51px;
+        background: url('navmenu_bg.png') no-repeat top center;
         margin: 6px 0 0 179.5px;
+        padding-top: 20px;
     }
+        #header p.navmenu a{
+            display: block;
+            width: 205px;
+            height: 33px;
+            text-align: center;
+            float: left;
+            padding-top: 17px;
+            font-size: 16px;
+            color: #ABBAC5;
+            text-decoration: none;      
+        }
+            #header p.navmenu a:hover{
+                color: #FFCC00;
+            }
+        #header p.navmenu em{
+            display: block;
+            float: left;
+            width: 2px;
+            height: 35px;
+            background: url('menu_divisor.png') no-repeat top center;
+            margin-top: 10px;
+            text-indent: -99999px;
+        }
 
 
 #content{
     width: 980px;
     float: left;
-    background: yellow;
+    background: #060A0E;
     min-height: 300px;
 }
