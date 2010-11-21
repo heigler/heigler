@@ -183,6 +183,13 @@ body{
             text-indent: 15px;
             margin-bottom: 10px;
         }
+        #content div.main p.content-divisor{
+            width: 790px;
+            height: 2px;
+            background: url('content-divisor.jpg') no-repeat top center;
+            text-indent: -99999px;
+            margin-top: 20px;
+        }
     
     #content div.tools{
         float: right;
@@ -224,7 +231,6 @@ body{
 p.tool-divisor{
     width: 160px;
     height: 2px;
-    text-align: center;
     background: url('tool-divisor.jpg') no-repeat top center;
     text-indent: -99999px;
 }
