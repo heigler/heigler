@@ -10,14 +10,16 @@
 <body>
     <div class="container">
         <div id="header">
-            <p class="left">
-                Heigler Rocha
-            </p>
+            <h1>
+                <a href="/">
+                    Heigler Rocha
+                </a>
+            </h1>
             
-            <div class="right">
+            <div>
                 <p class="flags">
-                    <a href="#" class="en on"></a>
-                    <a href="#" class="br"></a>
+                    <a href="#" class="en on" title="English"></a>
+                    <a href="#" class="br" title="Português"></a>
                 </p>
                 
                 <p class="quote">
@@ -36,7 +38,7 @@
                 </a>
                 <em>vertical divisor</em>
                 <a href="#">
-                    Contacts
+                    Contact
                 </a>
             </p>
                     
@@ -45,14 +47,81 @@
     
     <div id="navigator">
         <ul>
-        
+            <li class="arrow left">
+                <a href="#"></a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/media/style/work_dromatelius.jpg" alt="Dromatelius" />
+                    Dromatelius
+                </a>
+            </li>         
+            <li>
+                <a href="#">
+                    <img src="/media/style/work_dromatelius.jpg" alt="Dromatelius" />
+                    Paraná Online
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/media/style/work_dromatelius.jpg" alt="Dromatelius" />
+                    Mega Mídia Group
+                </a>
+            </li>
+            <li class="arrow right">
+                <a href="#"></a>
+            </li>
         </ul>
     </div>
     
     <div class="container">
         <div id="content">
-            content comes here
+                    
+            <div class="main">
+                <h2>Some title</h2>
+                <p>
+                    So I created a Brander class which would turn arguments into an appropriate path and added some new routes such as “brand/:type/:color/logo.png” and created a call to brander in the controller’s “brand” action that ends with a redirect to the returned URL. <br />
+
+                    It’s all really simple, but it allows me to have a url like http://johnmetta.com/brand/icon/logo.png and supply my logo, and http://johnmetta.com/brand/stacked/blue/logo.png for a one-color blue stacked logo. Then, if I update the colors (move the files, whatever) they update automatically. At a maximum, I just check in the changes and make minimal changes to the routes- but don’t have to copy files to servers. <br />
+                    More content bla bla bla <br />
+                    Ops one more, lets see haha ha Ops one more, lets see haha haOps one more, lets see haha ha Ops one more, lets see haha haOps one more, lets see haha ha Ops one more, lets see haha ha 
+                    
+                </p>                
+            </div>
+            
+            <div class="tools">
+                <h2>Social Network</h2>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="/media/style/facebook.jpg" alt="facebook" /> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/media/style/orkut.jpg" alt="orkut" /> Orkut
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/media/style/twitter.jpg" alt="twitter" /> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/media/style/github.png" alt="git hub" /> GitHub
+                        </a>
+                    </li>                
+                </ul>
+                <p class="tool-divisor">tool divisor</p>
+                
+            </div>            
+            
         </div>
+        
+        <p id="footer">
+            Heigler Rocha - 2010
+        </p>
     </div>
 
     <script type="text/javascript" src="/media/js/j.js"></script>

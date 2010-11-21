@@ -1,7 +1,7 @@
 *{
     list-style: none;
-    font-family: Verdana;
-    color: #fff;
+    font-family: Arial, sans-serif;
+    color: #ABBAC5;
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -11,21 +11,15 @@ body{
     background: #20272E url('bg.jpg') no-repeat top center;
 }
 
+.invisible{
+    display: none;
+}
+
 .container{
     width: 980px;
     text-align: center;
     margin: 0 auto;
 }
-#navigator{
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-}
-    #navigator ul{
-        float: left;
-        width: 100%;
-        height: 149px;
-    }
 
 /* header */    
 #header{
@@ -33,54 +27,58 @@ body{
     height: 151px;
     float: left;
 }
-    #header p.left{
+    #header h1{
         float: left;
         background: url('logo.png') no-repeat top center;
         width: 298px;
-        height: 63px;
-        text-indent: -9999px;
+        height: 63px;        
         margin: 10px 0 0 179.5px;
     }
-    #header div.right{
+        #header h1 a{
+            display: block;
+            width: 298px;
+            height: 63px;
+            text-indent: -9999px;
+        }
+    #header div{
         float: right;
         height: 68px;
         width: 315px;
         margin: 5px 180px 0 0;
     }
-        #header div.right p.flags{
+        #header div p.flags{
             width: 315px;
             text-align: right;
         }
-            #header div.right p.flags a{
+            #header div p.flags a{
                 display: inline-block;
                 width: 27px;
                 height: 26px;
             }
-            #header div.right p.flags a.br{
+            #header div p.flags a.br{
                 background: url('flag_br.png') no-repeat top center;
             }
-            #header div.right p.flags a.en{
+            #header div p.flags a.en{
                 background: url('flag_en.png') no-repeat top center;
             }
-            #header div.right p.flags a.en.on{
+            #header div p.flags a.en.on{
                 background: url('flag_en_on.png') no-repeat top center;
             }
-            #header div.right p.flags a.br.on{
+            #header div p.flags a.br.on{
                 background: url('flag_br_on.png') no-repeat top center;
             }
-                #header div.right p.flags a.br:hover{
+                #header div p.flags a.br:hover{
                     background: url('flag_br_on.png') no-repeat top center;
                 }
-                #header div.right p.flags a.en:hover{
+                #header div p.flags a.en:hover{
                     background: url('flag_en_on.png') no-repeat top center;
                 }
-        #header div.right p.quote{
+        #header div p.quote{
             width: 315px;
             font-size: 12px;
             color: #6C86AC;
             height: 40px;
         }
-
             
     #header p.navmenu{
         clear: both;
@@ -115,10 +113,119 @@ body{
             text-indent: -99999px;
         }
 
-
+/* navigator (works thumbnails) */
+#navigator{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+    #navigator ul{
+        float: left;
+        width: 100%;
+        height: 149px;
+        text-align: center;
+    }
+        #navigator ul li{
+            display: inline;
+        }
+            #navigator ul li a{
+                margin: 10px 10px 0 10px;
+                display: inline-block;
+                width: 178px;
+                height: 130px;
+                color: #060A0E;
+                text-decoration: none;
+            }
+            #navigator ul li a:hover{
+                color: #990000;
+            }
+                #navigator ul li a img{
+                    border: 2px solid #060A0E;
+                }
+                #navigator ul li a:hover img{
+                    border-color: #FFCC00;
+                }
+        #navigator ul li.arrow{
+        }
+            #navigator ul li.arrow a{
+                width: 12px;
+                height: 20px;
+                margin: 0;
+                vertical-align: 60px;
+            }
+                #navigator ul li.arrow.left a{
+                    background: url('arrow_left.jpg')
+                }
+                #navigator ul li.arrow.right a{
+                    background: url('arrow_right.jpg')
+                }        
+            
 #content{
     width: 980px;
     float: left;
     background: #060A0E;
     min-height: 300px;
+    padding: 20px;
+    text-align: left;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
 }
+    #content div.main{
+        float: left;
+        width: 790px;
+        line-height: 25px;
+    }
+        #content div.main h2{
+            font-size: 20px;
+            font-weight: normal;
+            color: #FF6600;
+            background: url('bullet1.jpg') no-repeat center left;
+            text-indent: 15px;
+            margin-bottom: 10px;
+        }
+    
+    #content div.tools{
+        float: right;
+        width: 160px;
+    }
+        #content div.tools h2{
+            font-size: 20px;
+            color: #6C89AC;
+            font-weight: normal;
+            margin-bottom: 10px;
+            background: url('bullet2.jpg') no-repeat center left;
+            text-indent: 15px;
+        }
+        #content div.tools ul{
+            margin-bottom: 15px;
+        }
+            #content div.tools ul li{
+                margin-bottom: 10px;
+            }
+            #content div.tools ul li a{
+                font-size: 16px;
+                text-decoration: none;
+            }
+            #content div.tools ul li a:hover{
+                color: #FFCC00;
+            }            
+                #content div.tools ul li a img{
+                    vertical-align: middle;
+                    border: none;
+                }
+                
+#footer{
+    width: 980px;
+    font-size: 12px;
+    margin-top: 10px;
+    float: left;
+}
+                
+p.tool-divisor{
+    width: 160px;
+    height: 2px;
+    text-align: center;
+    background: url('tool-divisor.jpg') no-repeat top center;
+    text-indent: -99999px;
+}
+    
