@@ -2,3 +2,7 @@
 - run: pip install -r requirements.txt
 - Create a database
 - Configure heigler/settings.py with your db configuration
+
+Tips:
+ To run the tests with sqlite (faster mode) you can use the test_settings config file:
+./manage.py test app --settings=test_settings

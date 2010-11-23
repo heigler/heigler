@@ -23,8 +23,12 @@ DATABASES = {
 
 
 TIME_ZONE = 'America/Sao_Paulo'
-
 LANGUAGE_CODE = 'en-us'
+gettext = lambda s: s
+LANGUAGES = (
+    ('en-us', gettext('English')),
+    ('pt_BR', gettext('Portuguese')),
+)
 
 SITE_ID = 1
 
@@ -70,4 +74,5 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'heigler.core',
 )

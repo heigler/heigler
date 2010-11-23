@@ -1,0 +1,26 @@
+[
+    {
+        "pk": 1, 
+        "model": "core.socialnetwork", 
+        "fields": {
+            "link": "http://facebook.com", 
+            "type": "facebook"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "core.socialnetwork", 
+        "fields": {
+            "link": "http://orkut.com", 
+            "type": "orkut"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "core.socialnetwork", 
+        "fields": {
+            "link": "http://twitter.com", 
+            "type": "twitter"
+        }
+    }
+]
