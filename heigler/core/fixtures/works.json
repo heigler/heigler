@@ -1,0 +1,44 @@
+[
+    {
+        "pk": 1, 
+        "model": "core.work", 
+        "fields": {
+            "language": "en-us",
+            "slug": "work-1",
+            "end_date": "2010-11-24", 
+            "title": "Work 1", 
+            "image": "work1.jpg", 
+            "content": "test content", 
+            "company_name": "test company", 
+            "start_date": "2010-11-23"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "core.work", 
+        "fields": {
+            "language": "pt_BR",
+            "slug": "work-2", 
+            "end_date": "2010-11-24", 
+            "title": "Work 2", 
+            "image": "work2.jpg", 
+            "content": "test content", 
+            "company_name": null, 
+            "start_date": "2010-11-23"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "core.work", 
+        "fields": {
+            "language": "pt_BR",
+            "slug": "work-3", 
+            "end_date": null, 
+            "title": "Work 3", 
+            "image": "work3.jpg", 
+            "content": "test content", 
+            "company_name": null, 
+            "start_date": "2010-11-23"
+        }
+    }
+]

@@ -25,7 +25,7 @@ class Presentation(models.Model):
         
     @models.permalink
     def get_absolute_url(self):
-        return ('core_presentation_detail', [self.language, self.type])
+        return ('core_presentation_detail', [self.language, self.type, self.pk])
         
 
 class SocialNetwork(models.Model):
@@ -52,6 +52,7 @@ class SocialNetwork(models.Model):
 class Work(models.Model):
     
     title = models.CharField(_('title'), max_length=150)
+    slug = models.SlugField(_('slug'), max_length=150)
     start_date = models.DateField(_('start date'))
     end_date = models.DateField(_('end date'), null=True, blank=True)
     company_name = models.CharField(_('company name'), max_length=100, null=True, blank=True)
@@ -62,8 +63,14 @@ class Work(models.Model):
     class Meta:
         verbose_name = _('work')
         verbose_name_plural = _('works')
+        unique_together = (('slug', 'language'),)
         
     def __unicode__(self):
-        return self.title        
+        return self.title
+        
+    @models.permalink
+    def get_absolute_url(self):
+        return ('core_work_detail', [self.language, self.slug])
+        
     
 

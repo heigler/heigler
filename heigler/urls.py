@@ -8,8 +8,9 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     
     # core routes
-    url(r'^presentation/(?P<language>[-\w]+)/(?P<type>[-\w]+)/$', 'heigler.core.views.presentation_detail', 
+    url(r'^presentations/(?P<language>[-\w]+)/(?P<type>[-\w]+)/(?P<object_id>\d+)/$', 'heigler.core.views.presentation_detail', 
         name='core_presentation_detail'),
+    url(r'^works/(?P<language>[-\w]+)/(?P<slug>[-\w+]+)/$', 'heigler.core.views.work_detail', name='core_work_detail'),
     
 )
 

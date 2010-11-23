@@ -24,7 +24,7 @@ class PresentationModelTest(TestCase):
     def test_absolute_url_method(self):
         instance = Presentation.objects.all()[0]
         url = getattr(instance, 'get_absolute_url', lambda: False)()
-        expected_url = reverse('core_presentation_detail', args=[instance.language, instance.type])
+        expected_url = reverse('core_presentation_detail', args=[instance.language, instance.type, instance.pk])
         
         self.assertTrue(url, 'method not implemented')
         self.assertEqual(url, expected_url)
@@ -32,8 +32,11 @@ class PresentationModelTest(TestCase):
     def test_unique_rules(self):
         first_instance = self.create_instance()
         
-        # same language and type are not allowed
+        # same language and type shoudn't be allowed
         self.assertRaises(IntegrityError, self.create_instance)
+        
+        allowed_instance = self.create_instance(language='en-us')
+        self.assertTrue(allowed_instance)
         
 
 class SocialNetworkModelTest(TestCase):
@@ -55,14 +58,37 @@ class SocialNetworkModelTest(TestCase):
         
 class WorkModelTest(TestCase):
     
-    def test_creation(self):
+    fixtures = ['works.json']
+    
+    def create_instance(self, **kwargs):
         today = datetime.today()
         tomorrow = today + timedelta(days=1)
-        instance = Work.objects.create(title='Test title', start_date=today, end_date=tomorrow,
-                                       company_name='Test company', content='Test content', image='test.jpg',
-                                       language='en-us')  
-                                       
+        default_options = {'title': 'Test tile', 'slug': 'test-slug', 'start_date': today, 'end_date': tomorrow,
+                           'company_name': 'Test company', 'content': 'Test content', 'image': 'test.jpg',
+                           'language': 'en-us'}
+        default_options.update(kwargs)
+        
+        return Work.objects.create(**default_options)      
+    
+    def test_creation(self):
+        instance = self.create_instance()                                     
         self.assertTrue(instance.pk, 'could not create a work')
         
+    def test_absolute_url_method(self):
+        instance = Work.objects.all()[0]
+        url = getattr(instance, 'get_absolute_url', lambda: False)()
+        expected_url = reverse('core_work_detail', args=[instance.language, instance.slug])
         
+        self.assertTrue(url, 'method not implemented')
+        self.assertEqual(url, expected_url)
+    
+    def test_unique_rules(self):
+        self.create_instance()
         
+        # same language and slug should'nt be allowed
+        self.assertRaises(IntegrityError, self.create_instance)
+        
+        allowed_instance = self.create_instance(slug='another-slug')
+        self.assertTrue(allowed_instance)
+        
+    
