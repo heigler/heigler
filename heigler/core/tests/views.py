@@ -45,3 +45,13 @@ class WorkViewTest(TestCase):
         for item in expected_queryset:
             self.assertContains(response, item.title)
             self.assertContains(response, item.get_absolute_url())
+            
+class ContactViewTest(TestCase):
+    
+    def test_response(self):
+        url = reverse('core_contact')
+        response = self.client.get(url)
+        
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'core/contact.html')
+        self.assertContains(response, '<form')

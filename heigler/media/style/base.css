@@ -194,6 +194,11 @@ body{
             text-indent: -99999px;
             margin-top: 20px;
         }
+    #content div.main p.project-image{
+        width: 790px;
+        text-align: center;
+        margin: 15px 0;
+    }
     
     #content div.tools{
         float: right;
@@ -224,7 +229,14 @@ body{
                     vertical-align: middle;
                     border: none;
                 }
-                
+#content a{
+    text-decoration: none;
+    font-weight: bold;
+}
+    #content a:hover{
+        color: #FFCC00;
+    }
+
 #footer{
     width: 980px;
     font-size: 12px;
@@ -239,3 +251,35 @@ p.tool-divisor{
     text-indent: -99999px;
 }
     
+ul.work-list{
+    width: 790px;
+    float: left;
+}
+    ul.work-list li{
+        float: left;
+        width: 150px;
+        margin: 10px;
+        text-align: center;
+    }
+    
+.form p input, .form p textarea{
+    background: #ABBAC5;
+    border: none;
+    color: #000;
+}
+    .form p label{
+        display: block;
+    }
+        .form p.button{
+            margin-left: 292px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+            .form p.button input{
+                display: inline-block;
+                padding: 5px;
+            }
+        
+ul.errorlist li{
+    color: red;
+}

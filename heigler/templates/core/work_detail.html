@@ -4,9 +4,9 @@
 {% block main_content %}
     <h2>{{ object.title }}</h2>
     
-    <ul>
+    <ul class="work-properties">
         <li>
-            {% trans 'since' %} {{ object.start_date }} 
+            <em>{% trans 'Period' %}</em>: {% trans 'Since' %} {{ object.start_date }} 
             {% if object.end_date %}
                 {% trans 'until' %} {{ object.end_date }}
             {% endif %}

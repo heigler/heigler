@@ -3,3 +3,4 @@
 from heigler.core.tests.models import *
 from heigler.core.tests.views import *
 from heigler.core.tests.templates import *
+from heigler.core.tests.forms import *
