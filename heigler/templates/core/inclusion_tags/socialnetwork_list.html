@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<h2>{% trans 'Social Network' %}</h2>
+    <ul>
+        {% for object in object_list %}
+        <li>
+            <a href="{{ object.link }}">
+                <img src="{{ object.get_media_url }}" alt="{{ object.type }}" /> {{ object.get_name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+<p class="tool-divisor">tool divisor</p>

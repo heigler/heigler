@@ -79,6 +79,10 @@ body{
             color: #6C86AC;
             height: 40px;
         }
+            #header div p.quote em{
+                color: #6C86AC;
+                font-size: 11px;
+            }
             
     #header p.navmenu{
         clear: both;

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+{% if object %}
+    <h2>{{ object.title }}</h2>
+    <p>
+       {{ object.content|linebreaksbr }}             
+    </p>
+    <p class="content-divisor">content divisor</p>
+{% endif %}
+{% endblock %}

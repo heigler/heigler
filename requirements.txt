@@ -1,3 +1,5 @@
 django==1.2.3
 MySQL-python
 pil
+South
+-e git+http://github.com/SmileyChris/easy-thumbnails.git#egg=easy_thumbnails

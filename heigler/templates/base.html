@@ -1,3 +1,5 @@
+{% load core_tags %}
+{% load i18n core_tags %}
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -8,6 +10,7 @@
 </head>
 
 <body>
+    {% get_current_language as CUR_LANG %}
     <div class="container">
         <div id="header">
             <h1>
@@ -18,104 +21,32 @@
             
             <div>
                 <p class="flags">
-                    <a href="#" class="en on" title="English"></a>
-                    <a href="#" class="br" title="Português"></a>
+                    <a href="#" class="en {% if CUR_LANG == 'en-us' %}on{% endif %}" title="English"></a>
+                    <a href="#" class="br {% if CUR_LANG == 'pt_BR' %}on{% endif %}" title="Português"></a>
                 </p>
                 
-                <p class="quote">
-                    "teste bla bla oi mundo bla bla"
-                </p>
+                {% include 'quote.html' %}
                                
             </div>
             
-            <p class="navmenu">
-                <a href="#">
-                    About
-                </a>
-                <em>vertical divisor</em>
-                <a href="#">
-                    Works
-                </a>
-                <em>vertical divisor</em>
-                <a href="#">
-                    Contact
-                </a>
-            </p>
+            {% include 'navmenu.html' %}
                     
         </div>          
     </div>
     
     <div id="navigator">
-        <ul>
-            <li class="arrow left">
-                <a href="#"></a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/media/style/work_dromatelius.jpg" alt="Dromatelius" />
-                    Dromatelius
-                </a>
-            </li>         
-            <li>
-                <a href="#">
-                    <img src="/media/style/work_dromatelius.jpg" alt="Dromatelius" />
-                    Paraná Online
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/media/style/work_dromatelius.jpg" alt="Dromatelius" />
-                    Mega Mídia Group
-                </a>
-            </li>
-            <li class="arrow right">
-                <a href="#"></a>
-            </li>
-        </ul>
+        {% work_list %}
     </div>
     
     <div class="container">
         <div id="content">
                     
             <div class="main">
-                <h2>Some title</h2>
-                <p>
-                    So I created a Brander class which would turn arguments into an appropriate path and added some new routes such as “brand/:type/:color/logo.png” and created a call to brander in the controller’s “brand” action that ends with a redirect to the returned URL. <br />
-
-                    It’s all really simple, but it allows me to have a url like http://johnmetta.com/brand/icon/logo.png and supply my logo, and http://johnmetta.com/brand/stacked/blue/logo.png for a one-color blue stacked logo. Then, if I update the colors (move the files, whatever) they update automatically. At a maximum, I just check in the changes and make minimal changes to the routes- but don’t have to copy files to servers. <br />
-                    More content bla bla bla <br />
-                    Ops one more, lets see haha ha Ops one more, lets see haha haOps one more, lets see haha ha Ops one more, lets see haha haOps one more, lets see haha ha Ops one more, lets see haha ha 
-                    
-                </p>
-                <p class="content-divisor">content divisor</p>                               
+                {% block main_content %}{% render_presentation CUR_LANG 'home' %}{% endblock %}                                            
             </div>
             
             <div class="tools">
-                <h2>Social Network</h2>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="/media/style/facebook.jpg" alt="facebook" /> Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/media/style/orkut.jpg" alt="orkut" /> Orkut
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/media/style/twitter.jpg" alt="twitter" /> Twitter
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/media/style/github.png" alt="git hub" /> GitHub
-                        </a>
-                    </li>                
-                </ul>
-                <p class="tool-divisor">tool divisor</p>
-                
+                {% socialnetwork_list %}                
             </div>            
             
         </div>

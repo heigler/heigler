@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <ul class="work-list">
+        {% for object in object_list %}
+            <li>
+                <a href="{{ object.get_absolute_url }}">
+                    <img src="{{ object.image.url }}" alt="{{ object.title }}" />
+                    {{ object.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

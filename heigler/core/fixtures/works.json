@@ -5,7 +5,8 @@
         "fields": {
             "language": "en-us",
             "slug": "work-1",
-            "end_date": "2010-11-24", 
+            "end_date": "2010-11-24",
+            "url": "http://google.com", 
             "title": "Work 1", 
             "image": "work1.jpg", 
             "content": "test content", 
@@ -19,7 +20,8 @@
         "fields": {
             "language": "pt_BR",
             "slug": "work-2", 
-            "end_date": "2010-11-24", 
+            "end_date": "2010-11-24",
+            "url": null,
             "title": "Work 2", 
             "image": "work2.jpg", 
             "content": "test content", 
@@ -33,7 +35,8 @@
         "fields": {
             "language": "pt_BR",
             "slug": "work-3", 
-            "end_date": null, 
+            "end_date": null,
+            "url": null,
             "title": "Work 3", 
             "image": "work3.jpg", 
             "content": "test content", 

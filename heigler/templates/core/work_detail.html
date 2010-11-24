@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n thumbnail %}
+
+{% block main_content %}
+    <h2>{{ object.title }}</h2>
+    
+    <ul>
+        <li>
+            {% trans 'since' %} {{ object.start_date }} 
+            {% if object.end_date %}
+                {% trans 'until' %} {{ object.end_date }}
+            {% endif %}
+        </li>
+        
+        {% if object.company_name %}
+        <li>
+            <em>{% trans 'company' %}</em>: {{ object.company_name }}
+        </li>        
+        {% endif %}
+        
+        {% if object.url %}
+        <li>
+            <a href="{{ object.url }}">{% trans 'Project url' %}</a>
+        </li>
+        {% endif %}   
+    </ul>
+    
+    <p class="project-image">
+        {% if object.url %}
+        <a href="{{ object.url }}">
+            <img src="{% thumbnail object.image 550x450 %}" alt="{{ object.title }}" />
+        </a>
+        {% else %}
+            <img src="{% thumbnail object.image 550x450 %}" alt="{{ object.title }}" />
+        {% endif %}
+    </p>
+    
+    <p>
+        {{ object.content|linebreaksbr }}    
+    </p>
+    
+{% endblock %}

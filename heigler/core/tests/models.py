@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 from django.test import TestCase
 from django.conf import settings
 from django.core.urlresolvers import reverse
-from django.db.utils import IntegrityError
 from heigler.core.models import Presentation, SocialNetwork, Work
 
 class PresentationModelTest(TestCase):
@@ -24,19 +23,10 @@ class PresentationModelTest(TestCase):
     def test_absolute_url_method(self):
         instance = Presentation.objects.all()[0]
         url = getattr(instance, 'get_absolute_url', lambda: False)()
-        expected_url = reverse('core_presentation_detail', args=[instance.language, instance.type, instance.pk])
+        expected_url = reverse('core_presentation_detail', args=[instance.language, instance.type])
         
         self.assertTrue(url, 'method not implemented')
-        self.assertEqual(url, expected_url)
-        
-    def test_unique_rules(self):
-        first_instance = self.create_instance()
-        
-        # same language and type shoudn't be allowed
-        self.assertRaises(IntegrityError, self.create_instance)
-        
-        allowed_instance = self.create_instance(language='en-us')
-        self.assertTrue(allowed_instance)
+        self.assertEqual(url, expected_url)        
         
 
 class SocialNetworkModelTest(TestCase):
@@ -55,6 +45,14 @@ class SocialNetworkModelTest(TestCase):
         self.assertTrue(media_url, 'method not implemented')
         self.assertEqual(media_url, expected_media_url)
         
+    def test_name_method(self):
+        instance = SocialNetwork.objects.all()[0]
+        name = getattr(instance, 'get_name', lambda: False)()
+        expected_value = instance.type.split('.')[0]
+        
+        self.assertTrue(name, 'method not implemented')
+        self.assertEqual(name, expected_value)      
+        
         
 class WorkModelTest(TestCase):
     
@@ -65,7 +63,7 @@ class WorkModelTest(TestCase):
         tomorrow = today + timedelta(days=1)
         default_options = {'title': 'Test tile', 'slug': 'test-slug', 'start_date': today, 'end_date': tomorrow,
                            'company_name': 'Test company', 'content': 'Test content', 'image': 'test.jpg',
-                           'language': 'en-us'}
+                           'language': 'en-us', 'url': 'http://google.com'}
         default_options.update(kwargs)
         
         return Work.objects.create(**default_options)      
@@ -80,15 +78,5 @@ class WorkModelTest(TestCase):
         expected_url = reverse('core_work_detail', args=[instance.language, instance.slug])
         
         self.assertTrue(url, 'method not implemented')
-        self.assertEqual(url, expected_url)
-    
-    def test_unique_rules(self):
-        self.create_instance()
-        
-        # same language and slug should'nt be allowed
-        self.assertRaises(IntegrityError, self.create_instance)
-        
-        allowed_instance = self.create_instance(slug='another-slug')
-        self.assertTrue(allowed_instance)
-        
-    
+        self.assertEqual(url, expected_url)    
+   

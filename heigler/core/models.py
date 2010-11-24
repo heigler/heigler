@@ -25,7 +25,7 @@ class Presentation(models.Model):
         
     @models.permalink
     def get_absolute_url(self):
-        return ('core_presentation_detail', [self.language, self.type, self.pk])
+        return ('core_presentation_detail', [self.language, self.type])
         
 
 class SocialNetwork(models.Model):
@@ -36,7 +36,7 @@ class SocialNetwork(models.Model):
                     ('github.png', 'GitHub'))
                     
     type = models.CharField(_('type'), max_length=30, choices=TYPE_CHOICES, unique=True)
-    link = models.URLField(_('link'), verify_exists=False)
+    link = models.URLField(_('link'))
     
     class Meta:
         verbose_name = _('social network')
@@ -48,11 +48,15 @@ class SocialNetwork(models.Model):
     def get_media_url(self):
         return '%sstyle/%s' %(settings.MEDIA_URL, self.type)
         
+    def get_name(self):
+        return self.type.split('.')[0]
+        
         
 class Work(models.Model):
     
     title = models.CharField(_('title'), max_length=150)
     slug = models.SlugField(_('slug'), max_length=150)
+    url = models.URLField(_('url'), help_text=_('the link of your work'), null=True, blank=True)
     start_date = models.DateField(_('start date'))
     end_date = models.DateField(_('end date'), null=True, blank=True)
     company_name = models.CharField(_('company name'), max_length=100, null=True, blank=True)

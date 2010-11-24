@@ -6,12 +6,13 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'base.html'}),    
     (r'^admin/', include(admin.site.urls)),
+    (r'^i18n/', include('django.conf.urls.i18n')),
     
     # core routes
-    url(r'^presentations/(?P<language>[-\w]+)/(?P<type>[-\w]+)/(?P<object_id>\d+)/$', 'heigler.core.views.presentation_detail', 
+    url(r'^presentations/(?P<language>[-\w]+)/(?P<type>[-\w]+)/$', 'heigler.core.views.presentation_detail', 
         name='core_presentation_detail'),
-    url(r'^works/(?P<language>[-\w]+)/(?P<slug>[-\w+]+)/$', 'heigler.core.views.work_detail', name='core_work_detail'),
-    
+    url(r'^works/(?P<language>[-\w]+)/$', 'heigler.core.views.work_list', name='core_work_list'),
+    url(r'^works/(?P<language>[-\w]+)/(?P<slug>[-\w+]+)/$', 'heigler.core.views.work_detail', name='core_work_detail'),   
 )
 
 if settings.DEBUG:

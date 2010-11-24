@@ -4,7 +4,7 @@
         "model": "core.socialnetwork", 
         "fields": {
             "link": "http://facebook.com", 
-            "type": "facebook"
+            "type": "facebook.jpg"
         }
     }, 
     {
@@ -12,7 +12,7 @@
         "model": "core.socialnetwork", 
         "fields": {
             "link": "http://orkut.com", 
-            "type": "orkut"
+            "type": "orkut.jpg"
         }
     }, 
     {
@@ -20,7 +20,7 @@
         "model": "core.socialnetwork", 
         "fields": {
             "link": "http://twitter.com", 
-            "type": "twitter"
+            "type": "twitter.jpg"
         }
     }
 ]
