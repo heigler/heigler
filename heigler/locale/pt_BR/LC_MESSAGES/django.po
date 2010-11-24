@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-24 21:14-0200\n"
+"PO-Revision-Date: 2010-11-24 21:15-0300\n"
+"Last-Translator: Heigler <lordheigler@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: global_settings.py:29
+msgid "English"
+msgstr "Inglês"
+
+#: global_settings.py:30
+msgid "Portuguese"
+msgstr "Português"
+
+#: core/forms.py:7
+msgid "name"
+msgstr "nome"
+
+#: core/forms.py:8
+msgid "e-mail"
+msgstr "e-mail"
+
+#: core/forms.py:9
+msgid "subject"
+msgstr "assunto"
+
+#: core/forms.py:10
+#: core/models.py:15
+#: core/models.py:63
+msgid "content"
+msgstr "conteúdo"
+
+#: core/models.py:10
+msgid "Home"
+msgstr "Home"
+
+#: core/models.py:11
+#: templates/navmenu.html:4
+msgid "About"
+msgstr "Sobre"
+
+#: core/models.py:13
+#: core/models.py:57
+msgid "title"
+msgstr "title"
+
+#: core/models.py:14
+#: core/models.py:38
+msgid "type"
+msgstr "tipo"
+
+#: core/models.py:16
+#: core/models.py:65
+msgid "language"
+msgstr "língua"
+
+#: core/models.py:19
+msgid "presentation"
+msgstr "apresentação"
+
+#: core/models.py:20
+msgid "presentations"
+msgstr "apresentações"
+
+#: core/models.py:39
+msgid "link"
+msgstr "link"
+
+#: core/models.py:42
+msgid "social network"
+msgstr "rede social"
+
+#: core/models.py:43
+msgid "social networks"
+msgstr "redes sociais"
+
+#: core/models.py:58
+msgid "slug"
+msgstr "slug"
+
+#: core/models.py:59
+msgid "url"
+msgstr "url"
+
+#: core/models.py:59
+msgid "the link of your work"
+msgstr "o link do seu trabalho"
+
+#: core/models.py:60
+msgid "start date"
+msgstr "data de início"
+
+#: core/models.py:61
+msgid "end date"
+msgstr "data de término"
+
+#: core/models.py:62
+msgid "company name"
+msgstr "nome da empresa"
+
+#: core/models.py:64
+msgid "image"
+msgstr "imagem"
+
+#: core/models.py:68
+msgid "work"
+msgstr "trabalho"
+
+#: core/models.py:69
+msgid "works"
+msgstr "trabalhos"
+
+#: templates/navmenu.html:8
+#: templates/core/work_list.html:5
+msgid "Works"
+msgstr "Trabalhos"
+
+#: templates/navmenu.html:12
+msgid "Contact"
+msgstr "Contato"
+
+#: templates/core/contact.html:9
+msgid "Please, use the bellow form to contact me"
+msgstr "Para entrar em contato, apenas preencha o formulário abaixo"
+
+#: templates/core/contact.html:16
+msgid "Send"
+msgstr "Enviar"
+
+#: templates/core/contact_ok.html:6
+msgid "Your message has been sent, thank you! I'll try to reply you shortly."
+msgstr "Sua mensagem foi enviada, obrigado! Tentarei respondê-lo o quanto antes."
+
+#: templates/core/work_detail.html:9
+msgid "Period"
+msgstr "Período"
+
+#: templates/core/work_detail.html:9
+msgid "Since"
+msgstr "Desde"
+
+#: templates/core/work_detail.html:11
+msgid "until"
+msgstr "até"
+
+#: templates/core/work_detail.html:17
+msgid "company"
+msgstr "empresa"
+
+#: templates/core/work_detail.html:23
+msgid "Project url"
+msgstr "LInk do projeto"
+
+#: templates/core/inclusion_tags/socialnetwork_list.html:3
+msgid "Social Network"
+msgstr "Rede social"
+

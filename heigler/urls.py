@@ -6,7 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'base.html'}),    
     (r'^admin/', include(admin.site.urls)),
-    (r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^i18n/setlang/$', 'heigler.core.views.set_language', name='set_language'),
     
     # core routes
     url(r'^presentations/(?P<language>[-\w]+)/(?P<type>[-\w]+)/$', 'heigler.core.views.presentation_detail', 

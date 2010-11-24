@@ -23,11 +23,10 @@ DATABASES = {
 
 
 TIME_ZONE = 'America/Sao_Paulo'
-LANGUAGE_CODE = 'en-us'
 gettext = lambda s: s
 LANGUAGES = (
-    ('en-us', gettext('English')),
-    ('pt_BR', gettext('Portuguese')),
+   ('en-us', gettext('English')),
+   ('pt-br', gettext('Portuguese')),
 )
 
 SITE_ID = 1
@@ -56,6 +55,7 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',

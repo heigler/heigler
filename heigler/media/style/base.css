@@ -261,23 +261,31 @@ ul.work-list{
         margin: 10px;
         text-align: center;
     }
+        ul.work-list li a img{
+            border: none;
+        }
     
+
 .form p input, .form p textarea{
     background: #ABBAC5;
     border: none;
     color: #000;
+    width: 335px;
 }
     .form p label{
         display: block;
     }
         .form p.button{
-            margin-left: 292px;
+            width: 335px;
             font-size: 14px;
             font-weight: bold;
+            margin-top: 15px;
+            text-align: right;
         }
             .form p.button input{
                 display: inline-block;
                 padding: 5px;
+                width: auto;
             }
         
 ul.errorlist li{

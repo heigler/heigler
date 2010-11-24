@@ -21,10 +21,9 @@
             
             <div>
                 <p class="flags">
-                    <a href="#" class="en {% if CUR_LANG == 'en-us' %}on{% endif %}" title="English"></a>
-                    <a href="#" class="br {% if CUR_LANG == 'pt_BR' %}on{% endif %}" title="Português"></a>
-                </p>
-                
+                    <a href="{% url set_language %}?language=en-us" class="en {% if CUR_LANG == 'en-us' %}on{% endif %}" title="English"></a>
+                    <a href="{% url set_language %}?language=pt-br" class="br {% if CUR_LANG == 'pt-br' %}on{% endif %}" title="Português"></a>
+                </p>                
                 {% include 'quote.html' %}
                                
             </div>

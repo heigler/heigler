@@ -6,6 +6,7 @@ from django.http import Http404
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.shortcuts import redirect
+from django.utils.translation import check_for_language
 from heigler.core.models import Presentation, Work
 from heigler.core.forms import ContactForm
 
@@ -48,4 +49,21 @@ def contact(request):
         form = ContactForm()
     response = direct_to_template(request, template='core/contact.html',
                                   extra_context={'form': form})
+    return response
+
+
+def set_language(request):
+    next = request.REQUEST.get('next', None)
+    if not next:
+        next = request.META.get('HTTP_REFERER', None)
+    if not next:
+        next = '/'
+    response = redirect(next)
+    
+    lang_code = request.GET.get('language', None)
+    if lang_code and check_for_language(lang_code):
+        if hasattr(request, 'session'):
+            request.session['django_language'] = lang_code
+        else:
+            response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
     return response

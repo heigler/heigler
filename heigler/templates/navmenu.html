@@ -1,13 +1,14 @@
+{% load i18n %}
 <p class="navmenu">
     <a href="{% url core_presentation_detail CUR_LANG 'about' %}">
-        About
+        {% trans 'About' %}
     </a>
     <em>vertical divisor</em>
     <a href="{% url core_work_list CUR_LANG %}">
-        Works
+        {% trans 'Works' %}
     </a>
     <em>vertical divisor</em>
     <a href="{% url core_contact %}">
-        Contact
+        {% trans 'Contact' %}
     </a>
 </p>
