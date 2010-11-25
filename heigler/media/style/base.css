@@ -7,6 +7,10 @@
     font-size: 14px;
 }
 
+img{
+    border: none;
+}
+
 body{
     background: #20272E url('bg.jpg') no-repeat top center;
 }
