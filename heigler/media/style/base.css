@@ -257,12 +257,12 @@ ul.work-list{
 }
     ul.work-list li{
         float: left;
-        width: 150px;
+        width: 200px;
         margin: 10px;
         text-align: center;
     }
         ul.work-list li a img{
-            border: none;
+            border: 2px solid #060A0E;
         }
     
 
