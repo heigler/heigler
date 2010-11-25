@@ -28,10 +28,10 @@
     <p class="project-image">
         {% if object.url %}
         <a href="{{ object.url }}">
-            <img src="{% thumbnail object.image 550x450 %}" alt="{{ object.title }}" />
+            <img src="{% thumbnail object.image 550x450 crop %}" alt="{{ object.title }}" />
         </a>
         {% else %}
-            <img src="{% thumbnail object.image 550x450 %}" alt="{{ object.title }}" />
+            <img src="{% thumbnail object.image 550x450 crop %}" alt="{{ object.title }}" />
         {% endif %}
     </p>
     

@@ -7,7 +7,7 @@
         {% for object in object_list %}
             <li>
                 <a href="{{ object.get_absolute_url }}">
-                    <img src="{% thumbnail object.image 174x105 %}" alt="{{ object.title }}" /> <br />
+                    <img src="{% thumbnail object.image 174x105 crop %}" alt="{{ object.title }}" /> <br />
                     {{ object.title }}
                 </a>
             </li>
